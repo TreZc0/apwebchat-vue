@@ -136,11 +136,11 @@
     <button name="message" type="submit">Say</button>
   </form>
   <form class="chat-input" @submit="connect" v-else>
-    <div>
+    <div class="chat-input-field">
       <label for="url">URL</label>
       <input name="url" v-model="url" />
     </div>
-    <div>
+    <div class="chat-input-field">
       <label for="slot">Slot</label>
       <input name="slot" v-model="slot" />
     </div>
@@ -172,9 +172,15 @@
   align-items: center;
   margin: 8px 0;
 }
+.chat-input-field {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
 input {
   flex-grow: 1;
   padding: 4px;
+  margin: 4px;
   background-color: #1d1f21;
   color: #efefef;
   border: 2px solid #1d1f21;
@@ -184,7 +190,8 @@ label {
   margin: 0 8px;
 }
 button {
-  margin: 0 0 0 8px;
+  flex-shrink: 1;
+  margin: 0;
   padding: 4px;
   background-color: #1d1f21;
   color: #efefef;
@@ -268,5 +275,11 @@ button:hover {
 }
 .chat-message-part-color-white_bg {
   background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .chat-input {
+    flex-direction: column;
+  }
 }
 </style>
