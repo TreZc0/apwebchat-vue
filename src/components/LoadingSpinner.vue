@@ -5,6 +5,8 @@
 
 <style scoped>
 .spinner {
+  min-height: 24px;
+  min-width: 24px;
   height: 24px;
   width: 24px;
   margin: 8px;

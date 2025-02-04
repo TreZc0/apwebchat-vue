@@ -45,7 +45,7 @@ async function sendMessage(e: Event) {
       <label for="slot">Slot</label>
       <input name="slot" v-model="slot" />
     </div>
-    <LoadingSpinner v-if="chatStore.status == ChatClientStatus.CONNECTING"/>
+    <LoadingSpinner v-if="chatStore.status == ChatClientStatus.CONNECTING" style="flex-grow: 1;" />
     <button name="connect" type="submit" v-else>Connect</button>
   </form>
 </template>
