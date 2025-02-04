@@ -74,6 +74,7 @@ async function sendMessage(e: Event) {
   display: flex;
   align-items: center;
   flex-grow: 1;
+  width: 100%;
 }
 input {
   flex-grow: 1;
