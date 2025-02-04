@@ -1,3 +1,1 @@
-export type ChatStoreState = {
-
-}
+export type ChatStoreState = {}

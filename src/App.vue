@@ -6,18 +6,18 @@ import archipelagoIcon from '@/assets/archipelago.svg'
 <template>
   <div class="wrapper">
     <header>
-        <div class="title">
-          <img class="logo" :src="archipelagoIcon" width="64px" height="64px" />
-          <h2>APWebChat</h2>
-        </div>
-        <nav>
-          <RouterLink activeClass="active-link" to="/">Chat</RouterLink>
-          <RouterLink activeClass="active-link" to="/settings">Settings</RouterLink>
-          <RouterLink activeClass="active-link" to="/about">About</RouterLink>
-        </nav>
+      <div class="title">
+        <img class="logo" :src="archipelagoIcon" width="64px" height="64px" />
+        <h2>APWebChat</h2>
+      </div>
+      <nav>
+        <RouterLink activeClass="active-link" to="/">Chat</RouterLink>
+        <RouterLink activeClass="active-link" to="/settings">Settings</RouterLink>
+        <RouterLink activeClass="active-link" to="/about">About</RouterLink>
+      </nav>
     </header>
     <main>
-    <RouterView />
+      <RouterView />
     </main>
   </div>
 </template>
@@ -59,10 +59,12 @@ nav a {
   border-radius: 4px;
   transition: 0.1s;
 }
-.active-link, .active-link:hover {
+.active-link,
+.active-link:hover {
   background-color: #4d4f51;
 }
-nav a:link, nav a:visited {
+nav a:link,
+nav a:visited {
   text-decoration: none;
 }
 nav a:hover {

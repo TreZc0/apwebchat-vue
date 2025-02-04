@@ -12,9 +12,9 @@ export const useChatStore = defineStore('chat', {
   actions: {
     async connect(url: string, slot: string, password: string) {
       const options = {
-        password: password || undefined
+        password: password || undefined,
       }
       await client.login(url, slot, undefined, options)
-    }
-  }
+    },
+  },
 })

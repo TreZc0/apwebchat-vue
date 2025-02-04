@@ -14,13 +14,13 @@ const router = createRouter({
     {
       path: '/settings',
       name: 'settings',
-      component: SettingsView
+      component: SettingsView,
     },
     {
       path: '/about',
       name: 'about',
-      component: AboutView
-    }
+      component: AboutView,
+    },
   ],
 })
 
