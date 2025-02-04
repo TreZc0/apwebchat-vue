@@ -12,7 +12,6 @@ import archipelagoIcon from '@/assets/archipelago.svg'
       </div>
       <nav>
         <RouterLink activeClass="active-link" to="/">Chat</RouterLink>
-        <RouterLink activeClass="active-link" to="/settings">Settings</RouterLink>
         <RouterLink activeClass="active-link" to="/about">About</RouterLink>
       </nav>
     </header>
