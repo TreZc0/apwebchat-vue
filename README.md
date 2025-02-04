@@ -1,45 +1,16 @@
 # apwebchat-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple web chat client for the [Archipelago](https://archipelago.gg) multiworld randomizer platform.
 
-## Recommended IDE Setup
+## Using
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+No current host for this, so you'll need to install [Node.js](https://nodejs.org/) and build it yourself:
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
 npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+# this is the part where you take what's in dist/ and deploy it to a webserver or static site host.
+# otherwise, you can do this to host it locally:
+cd dist
+npx http-server
 ```
