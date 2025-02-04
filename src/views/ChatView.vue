@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import LoadingSpinner from '../components/LoadingSpinner.vue'
 import { useChatStore } from '../stores/ChatStore'
 import { ChatClientStatus } from '../enums/chat'
 
@@ -30,8 +31,10 @@ async function sendMessage(e: Event) {
     v-if="chatStore.status == ChatClientStatus.CONNECTED"
     @submit="sendMessage"
   >
-    <input name="message" v-model="message" />
-    <button name="message" type="submit">Say</button>
+    <div class="chat-input-field">
+      <input name="message" v-model="message" />
+      <button name="message" type="submit">Say</button>
+    </div>
   </form>
   <form class="chat-input" @submit.prevent="() => chatStore.connect(url, slot)" v-else>
     <div class="chat-input-field">
@@ -42,7 +45,7 @@ async function sendMessage(e: Event) {
       <label for="slot">Slot</label>
       <input name="slot" v-model="slot" />
     </div>
-    <span v-if="chatStore.status == ChatClientStatus.CONNECTING">Connecting...</span>
+    <LoadingSpinner v-if="chatStore.status == ChatClientStatus.CONNECTING"/>
     <button name="connect" type="submit" v-else>Connect</button>
   </form>
 </template>
