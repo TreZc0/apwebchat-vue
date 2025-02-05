@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import InputField from '../components/InputField.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue'
 import { useChatStore } from '../stores/ChatStore'
 import { ChatClientStatus } from '../enums/chat'
@@ -31,20 +32,12 @@ async function sendMessage(e: Event) {
     v-if="chatStore.status == ChatClientStatus.CONNECTED"
     @submit="sendMessage"
   >
-    <div class="chat-input-field">
-      <input name="message" v-model="message" />
-      <button name="message" type="submit">Say</button>
-    </div>
+    <InputField name="message" v-model="message" />
+    <button name="message" type="submit">Say</button>
   </form>
   <form class="chat-input" @submit.prevent="() => chatStore.connect(url, slot)" v-else>
-    <div class="chat-input-field">
-      <label for="url">URL</label>
-      <input name="url" v-model="url" />
-    </div>
-    <div class="chat-input-field">
-      <label for="slot">Slot</label>
-      <input name="slot" v-model="slot" />
-    </div>
+    <InputField name="url" label="URL" v-model="url" />
+    <InputField name="slot" label="Slot" v-model="slot" />
     <LoadingSpinner v-if="chatStore.status == ChatClientStatus.CONNECTING" style="flex-grow: 1;" />
     <button name="connect" type="submit" v-else>Connect</button>
   </form>
@@ -54,7 +47,7 @@ async function sendMessage(e: Event) {
 .chat-log {
   background-color: #1d1f21;
   min-height: 100px;
-  padding: 8px 8px 4px 8px;
+  padding: 8px;
   border-radius: 3px;
 }
 .chat-item {
@@ -72,24 +65,6 @@ async function sendMessage(e: Event) {
   display: flex;
   align-items: center;
   margin: 8px 0;
-}
-.chat-input-field {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  width: 100%;
-}
-input {
-  flex-grow: 1;
-  padding: 4px 4px 4px 0;
-  margin: 4px 4px 4px 0;
-  background-color: #1d1f21;
-  color: #efefef;
-  border: 2px solid #1d1f21;
-  border-radius: 3px;
-}
-label {
-  margin: 8px 4px 8px 0;
 }
 button {
   flex-shrink: 1;
