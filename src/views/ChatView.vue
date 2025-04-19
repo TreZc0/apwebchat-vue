@@ -68,6 +68,8 @@ async function sendMessage(e: Event) {
 .chat-log {
   background-color: #1d1f21;
   min-height: 500px;
+  overflow-y: auto;
+  max-height: 700px;
   padding: 8px;
   border-radius: 3px;
 }
