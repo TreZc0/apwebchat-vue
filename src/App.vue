@@ -8,9 +8,8 @@ import archipelagoIcon from '@/assets/archipelago.svg'
     <header>
       <title>MultiworldGG Web Chat Client</title>
       <div class="title">
-        <img class="logo" :src="archipelagoIcon" width="150px" height="25px" />
-        <h2>      <title>MultiworldGG Web Chat Client</title>
- WebChat Client</h2>
+        <img class="logo" :src="archipelagoIcon" width="150px" height="22px" />
+        <h2>WebChat Client</h2>
       </div>
       <nav>
         <RouterLink activeClass="active-link" to="/">Chat</RouterLink>
