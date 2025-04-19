@@ -1,5 +1,6 @@
 body {
-  background-color: #1d1f21;
+  background-image: url("/ocean.png");
+  background-size: 126px auto;
   font-family: sans-serif;
 }
 a,
@@ -8,4 +9,9 @@ a:link {
 }
 a:visited {
   color: #875fd7;
+}
+
+.title {
+    justify-content: center;
+    align-items: center;
 }

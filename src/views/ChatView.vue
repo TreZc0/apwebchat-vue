@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch, nextTick, onMounted } from 'vue'
 import InputField from '../components/InputField.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue'
 import { useChatStore } from '../stores/ChatStore'
@@ -10,6 +10,27 @@ const slot = ref('')
 const message = ref('')
 const chatStore = useChatStore()
 
+const chatContainer = ref<HTMLElement | null>(null)
+
+watch(
+  () => chatStore.chatLog,
+  () => {
+    nextTick(() => {
+      const el = chatContainer.value
+      if (el) {
+        el.scrollTop = el.scrollHeight
+      }
+    })
+  },
+  { deep: true }
+)
+
+onMounted(() => {
+  if (chatContainer.value) {
+    chatContainer.value.scrollTop = chatContainer.value.scrollHeight
+  }
+})
+
 async function sendMessage(e: Event) {
   e.preventDefault()
   chatStore.sendMessage(message.value)
@@ -18,7 +39,7 @@ async function sendMessage(e: Event) {
 </script>
 
 <template>
-  <div class="chat-log">
+  <div class="chat-log" ref="chatContainer">
     <div class="chat-item" v-for="message in chatStore.chatLog" :key="message.id">
       <p class="chat-message">
         <span v-for="part in message.parts" :key="part.id" :class="part.class">

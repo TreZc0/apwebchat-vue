@@ -3,6 +3,7 @@
   defineProps<{
     name: string
     label?: string
+    placeholder?: string
   }>()
   const model = defineModel()
 </script>
@@ -10,7 +11,7 @@
 <template>
   <div class="chat-input-field">
     <label :for="name" v-if="label != null">{{label}}</label>
-    <input :name="name" v-model="model" />
+    <input :name="name" :placeholder="placeholder" v-model="model" />
   </div>
 </template>
 

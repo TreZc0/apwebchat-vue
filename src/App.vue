@@ -6,9 +6,10 @@ import archipelagoIcon from '@/assets/archipelago.svg'
 <template>
   <div class="wrapper">
     <header>
+      <title>TreZapalooza Web Chat Client</title>
       <div class="title">
-        <img class="logo" :src="archipelagoIcon" width="64px" height="64px" />
-        <h2>APWebChat</h2>
+        <img class="logo" :src="archipelagoIcon" width="150px" height="25px" />
+        <h2>TreZapalooza WebChat Client</h2>
       </div>
       <nav>
         <RouterLink activeClass="active-link" to="/">Chat</RouterLink>
@@ -32,7 +33,7 @@ header nav {
   display: flex;
 }
 .wrapper {
-  max-width: 768px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -48,7 +49,7 @@ header nav {
 }
 
 .logo {
-  padding: 0px 12px 0px 0px;
+  padding: 0px 14px 0px 0px;
 }
 
 nav a {
