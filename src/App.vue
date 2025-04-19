@@ -6,10 +6,11 @@ import archipelagoIcon from '@/assets/archipelago.svg'
 <template>
   <div class="wrapper">
     <header>
-      <title>TreZapalooza Web Chat Client</title>
+      <title>MultiworldGG Web Chat Client</title>
       <div class="title">
         <img class="logo" :src="archipelagoIcon" width="150px" height="25px" />
-        <h2>TreZapalooza WebChat Client</h2>
+        <h2>      <title>MultiworldGG Web Chat Client</title>
+ WebChat Client</h2>
       </div>
       <nav>
         <RouterLink activeClass="active-link" to="/">Chat</RouterLink>

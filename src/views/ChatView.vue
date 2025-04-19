@@ -67,7 +67,7 @@ async function sendMessage(e: Event) {
 <style scoped>
 .chat-log {
   background-color: #1d1f21;
-  min-height: 100px;
+  min-height: 500px;
   padding: 8px;
   border-radius: 3px;
 }
